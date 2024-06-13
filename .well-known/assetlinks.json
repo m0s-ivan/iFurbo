@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.S0MA.iFurbo",
+      "sha256_cert_fingerprints":
+      ["B8:BC:88:17:11:79:63:A8:AA:C5:75:AB:93:45:20:1A:51:61:E4:33:51:C7:74:A8:B5:DC:3C:39:E8:4D:82:D4"]
+    }
+  }
+]

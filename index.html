@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iFurbo by s0m@</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const parser = new UAParser();
+        const device = parser.getDevice();
+        const isDesktop = device.type === undefined || !['wearable', 'mobile'].includes(device.type);
+        const desktopURL = "https://m0s-ivan.itch.io/ifurbo";
+        if (isDesktop) window.location.replace(desktopURL);
+        else {
+            const deepLink = new URL("ifurbo://deeplink");
+            deepLink.search = window.location.search;
+            window.location.replace(deepLink);
+            setTimeout(function () {
+                switch (parser.getOS().name) {
+                    case "Android":
+                        window.location.assign("https://play.google.com/store/apps/details?id=com.S0MA.iFurbo");
+                        break;
+                    case "iOS":
+                        // break;
+                    default:
+                        window.location.assign(desktopURL);
+                        break;
+                }
+            }, 2000);
+        }
+    });
+</script>
+<body>
+
+</body>
+</html>
